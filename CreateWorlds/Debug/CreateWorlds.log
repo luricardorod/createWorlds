@@ -1,0 +1,9 @@
+﻿  main.cpp
+e:\uad\createworlds\createworlds\main.cpp(64): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CFloor.cpp
+e:\uad\createworlds\createworlds\cfloor.cpp(121): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\uad\createworlds\createworlds\cfloor.cpp(226): warning C4305: 'argument': truncation from 'double' to 'float'
+e:\uad\createworlds\createworlds\cfloor.cpp(284): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  CreateWorlds.vcxproj -> E:\UAD\CreateWorlds\Debug\CreateWorlds.exe
+  CreateWorlds.vcxproj -> E:\UAD\CreateWorlds\Debug\CreateWorlds.pdb (Full PDB)
