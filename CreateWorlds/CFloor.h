@@ -24,7 +24,7 @@ private:
 	int m_iOffsetX;
 	int m_iOffsetY;
 
-	std::vector<node>::iterator selectedNodeDelaunay;
+	std::vector<node>::iterator m_selectedNodeDelaunay;
 public:
 	std::list<Triangle> m_DelaunayTriangles;
 	CVector2D m_ContainerRectangle;
@@ -40,8 +40,8 @@ public:
 	void PrepareDelaunayTriangulations();
 	bool StepDelaunayTriangulations();
 	bool SeparateRooms();
-	bool IsInsideNodeInCircle(CVector2D origin, float radius);
 	void FilterRooms(int minWidth, int minHeight, int maxWidth, int maxHeight);
+	void CleanDelauneyTriangulation();
 	CVector2D CreatePointInsideEllipse();
 	void CreateFirstTriangule();
 	void Init();

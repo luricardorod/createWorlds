@@ -50,7 +50,14 @@ int main()
 			state = 3;
 			break;
 		case 3:
-			//m_floor.StepDelaunayTriangulations();
+			if (!flagStepDelaunay)
+			{
+				state = 4;
+			}
+			break;
+		case 4:
+			m_floor.CleanDelauneyTriangulation();
+			state = 5;
 			break;
 		default:
 			break;
@@ -91,7 +98,7 @@ int main()
 				convex.setPointCount(3);
 				convex.setFillColor(sf::Color::Transparent);
 				convex.setOutlineColor(sf::Color::White);
-				convex.setOutlineThickness(1);
+				convex.setOutlineThickness(.5);
 
 
 				// define the points
