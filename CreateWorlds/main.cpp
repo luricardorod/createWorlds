@@ -17,6 +17,8 @@ int main()
 	m_floor.CreateRooms();
 
 	bool flagStepDelaunay = true;
+	bool flagNextStepDelaunay = false;
+
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -24,11 +26,15 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && state == 3)
 			{
 				if (flagStepDelaunay)
 				{
 					flagStepDelaunay = m_floor.StepDelaunayTriangulations();
+				}
+				else
+				{
+					flagNextStepDelaunay = true;
 				}
 			}
 		}
@@ -50,7 +56,7 @@ int main()
 			state = 3;
 			break;
 		case 3:
-			if (!flagStepDelaunay)
+			if (flagNextStepDelaunay)
 			{
 				state = 4;
 			}
@@ -59,12 +65,17 @@ int main()
 			m_floor.CleanDelauneyTriangulation();
 			state = 5;
 			break;
+		case 5:
+			m_floor.DesconectNodes();
+			state = 6;
+			break;
 		default:
 			break;
 		}
 
 		
 		window.clear();
+		m_floor.m_conectionsFloor;
 		for (auto room = m_floor.m_vRooms.begin(); room != m_floor.m_vRooms.end(); room++)
 		{
 			sf::RectangleShape rectangle;
@@ -92,20 +103,42 @@ int main()
 				window.draw(point);
 			}
 
-			for (auto tri = m_floor.m_DelaunayTriangles.begin(); tri != m_floor.m_DelaunayTriangles.end(); tri++)
+			if (state == 3)
 			{
-				sf::ConvexShape convex;
-				convex.setPointCount(3);
-				convex.setFillColor(sf::Color::Transparent);
-				convex.setOutlineColor(sf::Color::White);
-				convex.setOutlineThickness(.5);
+				for (auto tri = m_floor.m_DelaunayTriangles.begin(); tri != m_floor.m_DelaunayTriangles.end(); tri++)
+				{
+					sf::ConvexShape convex;
+					convex.setPointCount(3);
+					convex.setFillColor(sf::Color::Transparent);
+					convex.setOutlineColor(sf::Color::White);
+					convex.setOutlineThickness(.5);
 
 
-				// define the points
-				convex.setPoint(0, sf::Vector2f(tri->point0->m_position.x, tri->point0->m_position.y));
-				convex.setPoint(1, sf::Vector2f(tri->point1->m_position.x, tri->point1->m_position.y));
-				convex.setPoint(2, sf::Vector2f(tri->point2->m_position.x, tri->point2->m_position.y));
-				window.draw(convex);
+					// define the points
+					convex.setPoint(0, sf::Vector2f(tri->point0->m_position.x, tri->point0->m_position.y));
+					convex.setPoint(1, sf::Vector2f(tri->point1->m_position.x, tri->point1->m_position.y));
+					convex.setPoint(2, sf::Vector2f(tri->point2->m_position.x, tri->point2->m_position.y));
+					window.draw(convex);
+				}
+			}
+			if (state >= 5)
+			{
+				for (auto node= m_floor.m_graph.begin(); node != m_floor.m_graph.end(); node++)
+				{
+					for (auto connection = node->m_conections.begin(); connection != node->m_conections.end(); connection++)
+					{
+						if (connection->m_bstatus)
+						{
+							sf::Vertex line[] =
+							{
+								sf::Vertex(sf::Vector2f(connection->m_node->m_position.x, connection->m_node->m_position.y)),
+								sf::Vertex(sf::Vector2f(node->m_position.x, node->m_position.y))
+							};
+
+							window.draw(line, 2, sf::Lines);
+						}
+					}
+				}
 			}
 			
 		}

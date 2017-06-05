@@ -93,6 +93,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\UAD\6to\createWorlds\PathFinding;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,17 +153,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CDijkstra.cpp" />
     <ClCompile Include="CFloor.cpp" />
     <ClCompile Include="CGrafo.cpp" />
     <ClCompile Include="CRoom.cpp" />
     <ClCompile Include="CVector2D.cpp" />
+    <ClCompile Include="CWalker.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CDijkstra.h" />
     <ClInclude Include="CFloor.h" />
     <ClInclude Include="CGrafo.h" />
     <ClInclude Include="CRoom.h" />
     <ClInclude Include="CVector2D.h" />
+    <ClInclude Include="CWalker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

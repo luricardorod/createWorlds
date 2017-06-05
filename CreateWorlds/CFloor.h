@@ -4,7 +4,7 @@
 #include <vector>
 #include <list>
 #include "CGrafo.h"
-
+#include "CWalker.h"
 struct Triangle
 {
 	node *point0;
@@ -26,6 +26,7 @@ private:
 
 	std::vector<node>::iterator m_selectedNodeDelaunay;
 public:
+	std::list<Conection> m_conectionsFloor;
 	std::list<Triangle> m_DelaunayTriangles;
 	CVector2D m_ContainerRectangle;
 	float m_ContainerRectangleWidth;
@@ -33,8 +34,10 @@ public:
 
 	std::vector<node> m_graph;
 	std::vector<CRoom> m_vRooms;
+	void ConnectIfNotRepeated(node *nodeTemp, node *conectionNode);
 	void SetSizeRoom(int minWidth, int minHeight, int maxWidth, int maxHeight);
 	void SetSizeEllipse(int width, int height);
+	void DesconectNodes();
 	void SetNumberOfRooms(int numberRooms);
 	void CreateRooms();
 	void PrepareDelaunayTriangulations();

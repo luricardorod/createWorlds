@@ -2,10 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include "CDijkstra.h"
 
 #define VEL .1;
-#define MARGINERROR 0.001
+#define MARGINERROR 0
 #define SEPARETEMARGIN 10
+
+
 void CFloor::SetSizeRoom(int minWidth, int minHeight, int maxWidth, int maxHeight)
 {
 	m_iMinWidthSizeRoom = minWidth;
@@ -18,6 +21,57 @@ void CFloor::SetSizeEllipse(int width, int height)
 {
 	m_iEllipseWidth = width;
 	m_iEllipseHeight = height;
+}
+
+void CFloor::DesconectNodes()
+{
+	m_graph;
+
+	CDijkstra dijkstra;
+	CWalker *walker = &dijkstra;
+	std::vector<node*> nodes;
+	for (auto conection = m_conectionsFloor.begin(); conection != m_conectionsFloor.end(); conection++)
+	{
+		node* node1 = conection->m_node;
+		conection++;
+		node* node2 = conection->m_node;
+
+		std::vector<Conection>::iterator itConection1;
+		std::vector<Conection>::iterator itConection2;
+
+		for (auto conection1 = node1->m_conections.begin(); conection1 != node1->m_conections.end(); conection1++)
+		{
+			if (conection1->m_node->m_id == node2->m_id)
+			{
+				itConection1 = conection1;
+				break;
+			}
+		}
+		for (auto conection2 = node2->m_conections.begin(); conection2 != node2->m_conections.end(); conection2++)
+		{
+			if (conection2->m_node->m_id == node1->m_id)
+			{
+				itConection2 = conection2;
+				break;
+			}
+		}
+
+		itConection1->m_bstatus = false;
+		itConection2->m_bstatus = false;
+
+		
+
+		walker->SetStart(node1);
+		walker->SetEnd(node2);
+		walker->RunPathFinding();
+		nodes = walker->PathFinding();
+		if (nodes.size() == 0)
+		{
+			itConection1->m_bstatus = true;
+			itConection2->m_bstatus = true;
+		}
+	}
+	
 }
 
 void CFloor::SetNumberOfRooms(int numberRooms)
@@ -40,6 +94,7 @@ void CFloor::CreateRooms()
 
 }
 
+
 CVector2D Circumcircle(float &radius, CVector2D *p0, CVector2D *p1, CVector2D *p2) {
 	radius = 0.0f;
 	float a_0 = p0->x;
@@ -50,7 +105,8 @@ CVector2D Circumcircle(float &radius, CVector2D *p0, CVector2D *p1, CVector2D *p
 	float c_1 = p2->y;
 	float p_0, p_1, D;
 
-	D = 2*(a_1 * c_0 + b_1 * a_0 - b_1 * c_0 - a_1 * b_0 - c_1 * a_0 + c_1 * b_0);
+	D = (a_0 - c_0) * (b_1 - c_1) - (b_0 - c_0) * (a_1 - c_1);
+
 	p_0 = (((a_0 - c_0) * (a_0 + c_0) + (a_1 - c_1) * (a_1 + c_1)) / 2 * (b_1 - c_1)
 		- ((b_0 - c_0) * (b_0 + c_0) + (b_1 - c_1) * (b_1 + c_1)) / 2 * (a_1 - c_1))
 		/ D;
@@ -59,10 +115,15 @@ CVector2D Circumcircle(float &radius, CVector2D *p0, CVector2D *p1, CVector2D *p
 		- ((a_0 - c_0) * (a_0 + c_0) + (a_1 - c_1) * (a_1 + c_1)) / 2 * (b_0 - c_0))
 		/ D;
 	radius = sqrt(powf(c_0 - p_0, 2.0) + powf(c_1 - p_1, 2.0));
+	float lu = sqrt(powf(a_0 - p_0, 2.0) + powf(a_1 - p_1, 2.0));
+	float lus = sqrt(powf(b_0 - p_0, 2.0) + powf(b_1 - p_1, 2.0));
+
+
 	return CVector2D(p_0, p_1);
 }
 
-void connectionIfNotRepeated(node *nodeTemp, node *conectionNode) {
+void CFloor::ConnectIfNotRepeated(node *nodeTemp, node *conectionNode) {
+	m_graph;
 	for (std::vector<Conection>::iterator conection = nodeTemp->m_conections.begin(); conection != nodeTemp->m_conections.end(); ++conection)
 	{
 		if (conection->m_node->m_id == conectionNode->m_id)
@@ -70,12 +131,61 @@ void connectionIfNotRepeated(node *nodeTemp, node *conectionNode) {
 			return;
 		}
 	}
-	nodeTemp->m_conections.push_back(Conection(1, &(*conectionNode)));
+	float distance = (nodeTemp->m_position - conectionNode->m_position).Magnitude();
+
+	nodeTemp->m_conections.push_back(Conection(distance, &(*conectionNode), true));
+	conectionNode->m_conections.push_back(Conection(distance, &(*nodeTemp), true));
+	std::list<Conection>::iterator oldConnection;
+	for (oldConnection = m_conectionsFloor.begin(); oldConnection != m_conectionsFloor.end(); oldConnection++) {
+		if (distance > (oldConnection)->m_fvalue)
+		{
+			break;
+		}
+		
+		oldConnection++;
+
+	}
+	if (oldConnection == m_conectionsFloor.end())
+	{
+		m_conectionsFloor.push_back(Conection(distance, &(*conectionNode), true));
+		m_conectionsFloor.push_back(Conection(distance, &(*nodeTemp), true));
+	}
+	else
+	{
+		m_conectionsFloor.insert(oldConnection, Conection(distance, &(*conectionNode), true));
+		m_conectionsFloor.insert(oldConnection, Conection(distance, &(*nodeTemp), true));
+	}
+	
+
 }
 
 void CFloor::CreateFirstTriangule()
 {
-	float xMin = m_graph.begin()->m_position.x;
+	float xMin = m_vRooms.begin()->m_v2Position.x;
+	float xMax = m_vRooms.begin()->m_v2Position.x;
+	float yMin = m_vRooms.begin()->m_v2Position.y;
+	float yMax = m_vRooms.begin()->m_v2Position.y;
+
+	for (auto point = m_vRooms.begin(); point < m_vRooms.end(); point++)
+	{
+		if (point->m_v2Position.x < xMin)
+		{
+			xMin = point->m_v2Position.x;
+		}
+		if (point->m_v2Position.x + point->m_iWidth > xMax)
+		{
+			xMax = point->m_v2Position.x + point->m_iWidth;
+		}
+		if (point->m_v2Position.y < yMin)
+		{
+			yMin = point->m_v2Position.y;
+		}
+		if (point->m_v2Position.y + point->m_iHeight > yMax)
+		{
+			yMax = point->m_v2Position.y + point->m_iHeight;
+		}
+	}
+	/*float xMin = m_graph.begin()->m_position.x;
 	float xMax = m_graph.begin()->m_position.x;
 	float yMin = m_graph.begin()->m_position.y;
 	float yMax = m_graph.begin()->m_position.y;
@@ -98,11 +208,11 @@ void CFloor::CreateFirstTriangule()
 		{
 			yMax = point->m_position.y;
 		}
-	}
-	m_ContainerRectangle.x = xMin - 10;
-	m_ContainerRectangle.y = yMin - 10;
-	m_ContainerRectangleHeight = yMax - yMin + 20;
-	m_ContainerRectangleWidth = xMax - xMin + 20;
+	}*/
+	m_ContainerRectangle.x = xMin;
+	m_ContainerRectangle.y = yMin;
+	m_ContainerRectangleHeight = yMax - yMin;
+	m_ContainerRectangleWidth = xMax - xMin;
 	m_DelaunayTriangles.clear();
 
 	node temp;
@@ -201,22 +311,26 @@ bool CFloor::StepDelaunayTriangulations()
 	default:
 		break;
 	}
-
-	for (auto slectTempTriangle = tempTriangles.begin(); slectTempTriangle != tempTriangles.end(); slectTempTriangle++)
+	while (tempTriangles.size() > 0)
 	{
+		bool flag = true;
+		Triangle selectTempTriangle = tempTriangles.back();
+		tempTriangles.pop_back();
 		float radius;
-		CVector2D originCircle = Circumcircle(radius, &slectTempTriangle->point0->m_position, &slectTempTriangle->point1->m_position, &slectTempTriangle->point2->m_position);
+		CVector2D originCircle = Circumcircle(radius, &selectTempTriangle.point0->m_position, &selectTempTriangle.point1->m_position, &selectTempTriangle.point2->m_position);
+
+
 		for (auto selectedNode = m_graph.begin(); selectedNode != m_selectedNodeDelaunay; selectedNode++)
 		{
 			float distance = (originCircle - selectedNode->m_position).Magnitude();
 			if (distance + MARGINERROR < radius)
 			{
 				for (triangle = m_DelaunayTriangles.begin(); triangle != m_DelaunayTriangles.end(); triangle++) {
-					if (triangle->point0->m_id == slectTempTriangle->point0->m_id || triangle->point0->m_id == slectTempTriangle->point1->m_id || triangle->point0->m_id == selectedNode->m_id)
+					if (triangle->point0->m_id == selectTempTriangle.point0->m_id || triangle->point0->m_id == selectTempTriangle.point1->m_id || triangle->point0->m_id == selectedNode->m_id)
 					{
-						if (triangle->point1->m_id == slectTempTriangle->point0->m_id || triangle->point1->m_id == slectTempTriangle->point1->m_id || triangle->point1->m_id == selectedNode->m_id)
+						if (triangle->point1->m_id == selectTempTriangle.point0->m_id || triangle->point1->m_id == selectTempTriangle.point1->m_id || triangle->point1->m_id == selectedNode->m_id)
 						{
-							if (triangle->point2->m_id == slectTempTriangle->point0->m_id || triangle->point2->m_id == slectTempTriangle->point1->m_id || triangle->point2->m_id == selectedNode->m_id)
+							if (triangle->point2->m_id == selectTempTriangle.point0->m_id || triangle->point2->m_id == selectTempTriangle.point1->m_id || triangle->point2->m_id == selectedNode->m_id)
 							{
 								break;
 							}
@@ -225,24 +339,33 @@ bool CFloor::StepDelaunayTriangulations()
 				}
 				if (triangle != m_DelaunayTriangles.end())
 				{
-					slectTempTriangle->point0 = &*selectedNode;
-					if (triangle->point0->m_id == slectTempTriangle->point1->m_id) {
+					selectTempTriangle.point0 = &*selectedNode;
+					if (triangle->point0->m_id == selectTempTriangle.point1->m_id) {
 						triangle->point0 = &*m_selectedNodeDelaunay;
 					}
-					else if (triangle->point1->m_id == slectTempTriangle->point1->m_id) {
+					else if (triangle->point1->m_id == selectTempTriangle.point1->m_id) {
 						triangle->point1 = &*m_selectedNodeDelaunay;
 					}
 					else
 					{
 						triangle->point2 = &*m_selectedNodeDelaunay;
 					}
+					tempTriangles.push_back(*triangle);
+					m_DelaunayTriangles.erase(triangle);
+					flag = false;
+					break;
 				}
 			}
 		}
+		if (flag)
+		{
+			m_DelaunayTriangles.push_back(selectTempTriangle);
+		}
+		else
+		{
+			tempTriangles.push_back(selectTempTriangle);
+		}
 	}
-	m_DelaunayTriangles.push_back(tempTriangles[0]);
-	m_DelaunayTriangles.push_back(tempTriangles[1]);
-	m_DelaunayTriangles.push_back(tempTriangles[2]);
 	m_selectedNodeDelaunay++;
 	if (m_graph.end() - 3 != m_selectedNodeDelaunay)
 	{
@@ -309,31 +432,30 @@ void CFloor::FilterRooms(int minWidth, int minHeight, int maxWidth, int maxHeigh
 
 void CFloor::CleanDelauneyTriangulation()
 {
-	std::list<Triangle> TempDelaunayTriangles;
 
 	for (auto triangle = m_DelaunayTriangles.begin(); triangle != m_DelaunayTriangles.end(); triangle++)
 	{
-		bool flag = true;
-		if (triangle->point0->m_id == 10001 || triangle->point0->m_id == 10002 || triangle->point0->m_id == 10003)
+		if (triangle->point0->m_id != 10001 && triangle->point0->m_id != 10002 && triangle->point0->m_id != 10003)
 		{
-			flag = false;
+			if (triangle->point1->m_id != 10001 && triangle->point1->m_id != 10002 && triangle->point1->m_id != 10003)
+			{
+				ConnectIfNotRepeated(triangle->point0, triangle->point1);
+			}
+			if (triangle->point2->m_id != 10001 && triangle->point2->m_id != 10002 && triangle->point2->m_id != 10003)
+			{
+				ConnectIfNotRepeated(triangle->point0, triangle->point2);
+			}
 		}
-		else if (triangle->point1->m_id == 10001 || triangle->point1->m_id == 10002 || triangle->point1->m_id == 10003)
+		if (triangle->point1->m_id != 10001 && triangle->point1->m_id != 10002 && triangle->point1->m_id != 10003)
 		{
-			flag = false;
+			if (triangle->point2->m_id != 10001 && triangle->point2->m_id != 10002 && triangle->point2->m_id != 10003)
+			{
+				ConnectIfNotRepeated(triangle->point1, triangle->point2);
+			}
 		}
-		else if (triangle->point2->m_id == 10001 || triangle->point2->m_id == 10002 || triangle->point2->m_id == 10003)
-		{
-			flag = false;
-		}
-		if (flag)
-		{
-			TempDelaunayTriangles.push_back(*triangle);
-		}
+
 	}
 
-	m_DelaunayTriangles.clear();
-	m_DelaunayTriangles = TempDelaunayTriangles;
 }
 
 CVector2D CFloor::CreatePointInsideEllipse()
