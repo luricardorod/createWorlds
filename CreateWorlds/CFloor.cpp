@@ -4,9 +4,9 @@
 #include <math.h>
 #include "CDijkstra.h"
 
-#define VEL .1;
+#define VEL 1;
 #define MARGINERROR 0
-#define SEPARETEMARGIN 10
+#define SEPARETEMARGIN 0
 
 
 void CFloor::SetSizeRoom(int minWidth, int minHeight, int maxWidth, int maxHeight)
@@ -387,7 +387,7 @@ bool OverlappingRooms(CRoom *room1, CRoom *room2) {
 	float By = room2->m_v2Position.y - SEPARETEMARGIN;
 	float BY = room2->m_v2Position.y + room2->m_iHeight + SEPARETEMARGIN;
 
-	return !(Ax < Bx || BX < Ax || AY < By || BY < Ay);
+	return !(AX < Bx || BX < Ax || AY < By || BY < Ay);
 }
 
 bool CFloor::SeparateRooms()

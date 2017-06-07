@@ -4,15 +4,15 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works!");
 
 	
 	CFloor m_floor;
 	int state = 0;
 	m_floor.SetSizeEllipse(100, 100);
-	m_floor.SetNumberOfRooms(20);
+	m_floor.SetNumberOfRooms(50);
 	m_floor.SetSizeRoom(10, 10, 100, 100);
-	m_floor.SetOffset(200, 300);
+	m_floor.SetOffset(640, 400);
 
 	m_floor.CreateRooms();
 
@@ -48,7 +48,7 @@ int main()
 			}
 			break;
 		case 1:
-			m_floor.FilterRooms(20, 20, 90, 90);
+			m_floor.FilterRooms(40, 40, 90, 90);
 			state = 2;
 			break;
 		case 2:
