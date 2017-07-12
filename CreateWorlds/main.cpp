@@ -1,12 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include "CFloor.h"
 #include <iostream>
-
+#include "BMPperlinnoise.cpp"
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML works!");
 
-	
+	GenerateBMP(512, 512, 33333);
 	CFloor m_floor;
 	int state = 0;
 	m_floor.SetSizeEllipse(100, 100);

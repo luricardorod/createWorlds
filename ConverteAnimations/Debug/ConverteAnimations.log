@@ -1,0 +1,6 @@
+﻿  stdafx.cpp
+  ConverteAnimations.cpp
+e:\uad\6to\chemonky\createworlds\converteanimations\converteanimations.cpp(356): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  ConverteAnimations.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\ConverteAnimations.exe
+  ConverteAnimations.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\ConverteAnimations.pdb (Full PDB)

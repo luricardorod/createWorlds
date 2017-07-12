@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "CVector2D.h"
 #include <cmath>
 

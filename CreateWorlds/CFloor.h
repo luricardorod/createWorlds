@@ -3,7 +3,6 @@
 #include "CRoom.h"
 #include <vector>
 #include <list>
-#include "CGrafo.h"
 #include "CWalker.h"
 struct Triangle
 {
