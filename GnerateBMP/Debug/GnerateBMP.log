@@ -1,4 +1,1 @@
-﻿  BMPperlinnoise.cpp
-e:\uad\6to\chemonky\createworlds\gneratebmp\bmpperlinnoise.cpp(12): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\uad\6to\chemonky\createworlds\gneratebmp\bmpperlinnoise.cpp(13): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  GnerateBMP.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\GnerateBMP.lib
+﻿  GnerateBMP.vcxproj -> C:\Users\blueMonkey\Desktop\createWorlds\Debug\GnerateBMP.lib
