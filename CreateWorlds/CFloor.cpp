@@ -122,6 +122,68 @@ CVector2D Circumcircle(float &radius, CVector2D *p0, CVector2D *p1, CVector2D *p
 	return CVector2D(p_0, p_1);
 }
 
+void CFloor::ChangeTile(int positionX, int positionY, int value)
+{
+	int position = positionX + positionY * m_ContainerRectangleWidth;
+	int limX = m_ContainerRectangleWidth - 1;
+	int limY = m_ContainerRectangleHeight - 1;
+
+	m_tilesRoom[position].leftDown = value;
+	m_tilesRoom[position].leftUp = value;
+	m_tilesRoom[position].rigthDown = value;
+	m_tilesRoom[position].rigthUp = value;
+	m_tilesRoom[position].value = value;
+
+	if (positionX > 0)
+	{
+		if (positionY > 0)
+		{
+			int position = positionX - 1 + (positionY-1)* limX;
+			m_tilesRoom[position].rigthDown = value;
+		}
+		int position = positionX - 1 + positionY * limX;
+
+		m_tilesRoom[position].rigthDown = value;
+		m_tilesRoom[position].rigthUp = value;
+		if (positionY < limY)
+		{
+			int position = positionX - 1 + (positionY + 1)* limX;
+			m_tilesRoom[position].rigthUp = value;
+		}
+	}
+	if (positionY > 0)
+	{
+		int position = positionX + (positionY - 1)* limX;
+
+		m_tilesRoom[position].rigthDown = value;
+		m_tilesRoom[position].leftDown = value;
+	}
+	if (positionY < limY)
+	{
+		int position = positionX + (positionY + 1)* limX;
+
+		m_tilesRoom[position].rigthUp = value;
+		m_tilesRoom[position].leftUp = value;
+	}
+	if (positionX < limX)
+	{
+		if (positionY > 0)
+		{
+			int position = positionX + 1 + (positionY - 1)* limX;
+			m_tilesRoom[position].leftDown = value;
+		}
+		int position = positionX + 1 + positionY * limX;
+		m_tilesRoom[position].leftDown = value;
+		m_tilesRoom[position].leftUp = value;
+		if (positionY < limY)
+		{
+			int position = positionX + 1 + (positionY + 1)* limX;
+			m_tilesRoom[position].leftUp = value;
+		}
+	}
+
+}
+
 void CFloor::ConnectIfNotRepeated(node *nodeTemp, node *conectionNode) {
 	m_graph;
 	for (std::vector<Conection>::iterator conection = nodeTemp->m_conections.begin(); conection != nodeTemp->m_conections.end(); ++conection)
@@ -185,30 +247,7 @@ void CFloor::CreateFirstTriangule()
 			yMax = point->m_v2Position.y + point->m_iHeight;
 		}
 	}
-	/*float xMin = m_graph.begin()->m_position.x;
-	float xMax = m_graph.begin()->m_position.x;
-	float yMin = m_graph.begin()->m_position.y;
-	float yMax = m_graph.begin()->m_position.y;
-
-	for (auto point = m_graph.begin(); point < m_graph.end(); point++)
-	{
-		if (point->m_position.x < xMin)
-		{
-			xMin = point->m_position.x;
-		}
-		if (point->m_position.x > xMax)
-		{
-			xMax = point->m_position.x;
-		}
-		if (point->m_position.y < yMin)
-		{
-			yMin = point->m_position.y;
-		}
-		if (point->m_position.y > yMax)
-		{
-			yMax = point->m_position.y;
-		}
-	}*/
+	
 	m_ContainerRectangle.x = xMin;
 	m_ContainerRectangle.y = yMin;
 	m_ContainerRectangleHeight = yMax - yMin;
@@ -236,6 +275,34 @@ void CFloor::CreateFirstTriangule()
 	firstTriangle.point2 = &m_graph[m_graph.size() - 3];
 
 	m_DelaunayTriangles.push_back(firstTriangle);
+}
+
+void CFloor::GenerateMatrixFloor()
+{
+	
+	m_tilesRoom.resize(m_ContainerRectangleHeight * m_ContainerRectangleWidth);
+	for (auto tile = m_tilesRoom.begin(); tile != m_tilesRoom.end(); tile++)
+	{
+		tile->rigthUp = 0;
+		tile->rigthDown = 0;
+		tile->leftUp = 0;
+		tile->leftDown = 0;
+	}
+
+	for (auto room = m_vRooms.begin(); room != m_vRooms.end(); room++)
+	{
+		int offsetX = room->m_v2Position.x - m_ContainerRectangle.x;
+		int offsetY = room->m_v2Position.y - m_ContainerRectangle.y;
+		for (int j = 0; j < room->m_iHeight; j++)
+		{
+			for (int i = 0; i < room->m_iWidth; i++)
+			{
+				ChangeTile(offsetX + i, offsetY + j, 1);
+			}
+		}
+	}
+	int i = 0;
+	i++;
 }
 
 void CFloor::PrepareDelaunayTriangulations()
@@ -411,6 +478,9 @@ bool CFloor::SeparateRooms()
 		if (flagChange)
 		{
 			room->m_v2Position = room->m_v2Position +directionForce.Normalize() * VEL;
+			//room->m_v2Position.x = floor(room->m_v2Position.x);
+			//room->m_v2Position.y = floor(room->m_v2Position.y);
+
 		}
 	}
 

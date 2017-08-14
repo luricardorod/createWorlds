@@ -9,9 +9,14 @@ int main()
 	GenerateBMP(512, 512, 33333);
 	CFloor m_floor;
 	int state = 0;
+	int minXRoom = 12;
+	int minYRoom = 12;
+	int maxXRoom = 25;
+	int maxYRoom = 25;
+
 	m_floor.SetSizeEllipse(100, 100);
-	m_floor.SetNumberOfRooms(50);
-	m_floor.SetSizeRoom(10, 10, 100, 100);
+	m_floor.SetNumberOfRooms(100);
+	m_floor.SetSizeRoom(10, 10, 50, 50);
 	m_floor.SetOffset(640, 400);
 
 	m_floor.CreateRooms();
@@ -48,7 +53,7 @@ int main()
 			}
 			break;
 		case 1:
-			m_floor.FilterRooms(40, 40, 90, 90);
+			m_floor.FilterRooms(minXRoom, minYRoom, maxXRoom, maxYRoom);
 			state = 2;
 			break;
 		case 2:
@@ -68,6 +73,10 @@ int main()
 		case 5:
 			m_floor.DesconectNodes();
 			state = 6;
+			break;
+		case 6:
+			m_floor.GenerateMatrixFloor();
+			state = 7;
 			break;
 		default:
 			break;

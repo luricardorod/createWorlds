@@ -1,6 +1,19 @@
 ﻿  main.cpp
 e:\uad\6to\chemonky\createworlds\gneratebmp\bmpperlinnoise.cpp(12): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 e:\uad\6to\chemonky\createworlds\gneratebmp\bmpperlinnoise.cpp(13): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-e:\uad\6to\chemonky\createworlds\createworlds\main.cpp(82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+e:\uad\6to\chemonky\createworlds\createworlds\main.cpp(91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CWalker.cpp
+  CRoom.cpp
+  CFloor.cpp
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.cpp(127): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.cpp(128): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.cpp(129): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.cpp(283): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.cpp(294): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.cpp(295): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.cpp(317): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.cpp(556): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  CDijkstra.cpp
+  Generating Code...
   CreateWorlds.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\CreateWorlds.exe
   CreateWorlds.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\CreateWorlds.pdb (Full PDB)

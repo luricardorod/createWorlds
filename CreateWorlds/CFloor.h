@@ -4,6 +4,15 @@
 #include <vector>
 #include <list>
 #include "CWalker.h"
+
+struct Tiles
+{
+	unsigned short int leftUp;
+	unsigned short int rigthUp;
+	unsigned short int leftDown;
+	unsigned short int rigthDown;
+	unsigned short int value;
+};
 struct Triangle
 {
 	node *point0;
@@ -33,6 +42,8 @@ public:
 
 	std::vector<node> m_graph;
 	std::vector<CRoom> m_vRooms;
+	std::vector<Tiles> m_tilesRoom;
+	void ChangeTile(int positionX, int positionY, int value);
 	void ConnectIfNotRepeated(node *nodeTemp, node *conectionNode);
 	void SetSizeRoom(int minWidth, int minHeight, int maxWidth, int maxHeight);
 	void SetSizeEllipse(int width, int height);
@@ -46,6 +57,7 @@ public:
 	void CleanDelauneyTriangulation();
 	CVector2D CreatePointInsideEllipse();
 	void CreateFirstTriangule();
+	void GenerateMatrixFloor();
 	void Init();
 	void SetOffset(int x, int y);
 	CFloor();
