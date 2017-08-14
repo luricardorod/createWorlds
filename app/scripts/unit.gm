@@ -1,0 +1,32 @@
+/*heavyUnit = table( 
+	m_iIdFaction,
+	m_v2Direction [2],
+	m_fHp,
+	m_iGroupId,
+	m_bSelectable,
+	m_vQueueConstruction [10],
+	m_vListaGarrison [10],
+	m_fReloadTime,
+	m_fRotingTimer,
+	m_fConstructionTimer,
+	m_v2Coordinates [2], 
+	function = ent_state_init;
+);*/
+
+global ent_state_init = function(func)
+{
+  print( .name, " state initialised");
+  this:stateSet(func);
+};
+
+global state_dead = function()
+{
+  this.m_bSelectable = false;
+  stateSet( state_root );
+};
+
+global state_root = function()
+{
+  this.m_bSelectable = false;
+  stateSet( state_root );
+};

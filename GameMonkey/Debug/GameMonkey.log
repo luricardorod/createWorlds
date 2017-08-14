@@ -1,0 +1,95 @@
+﻿  gmMachine.cpp
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmmachine.cpp(133): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+  gmCodeTree.cpp
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(174): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(174): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(174): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(175): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(175): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(175): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(176): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(176): error C2660: 'fprintf': function does not take 1 arguments
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(186): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(186): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(186): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(187): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(187): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(187): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(188): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(188): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(188): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(189): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(189): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(189): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(190): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(190): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(190): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(191): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(191): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(191): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(192): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(192): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(192): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(193): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(193): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(193): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(194): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(194): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(194): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(196): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(196): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(196): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(198): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(198): error C2660: 'fprintf': function does not take 1 arguments
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(212): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(212): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(212): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(216): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(216): error C2660: 'fprintf': function does not take 1 arguments
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(225): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(225): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(225): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(226): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(226): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(226): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(227): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(227): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(227): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(228): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(228): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(228): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(229): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(229): error C2660: 'fprintf': function does not take 1 arguments
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(234): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(234): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(234): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(235): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(235): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(235): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(236): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(236): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(236): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(237): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(237): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(237): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(238): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(238): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'const int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(238): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(239): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(239): error C2660: 'fprintf': function does not take 1 arguments
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(244): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmcodetree.cpp(244): error C2660: 'fprintf': function does not take 1 arguments
+  gmByteCode.cpp
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(119): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(119): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(119): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(125): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(125): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(125): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(131): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(131): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(131): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(135): error C3688: invalid literal suffix 'GM_NL'; literal operator or literal operator template 'operator ""GM_NL' not found
+e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(135): error C2664: 'int fprintf(FILE *const ,const char *const ,...)': cannot convert argument 2 from 'int' to 'const char *const '
+  e:\uad\6to\chemonky\createworlds\gamemonkey\gmbytecode.cpp(135): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+  Generating Code...

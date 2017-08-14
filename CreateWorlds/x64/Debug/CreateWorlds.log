@@ -1,0 +1,11 @@
+﻿  main.cpp
+e:\uad\6to\chemonky\createworlds\createworlds\main.cpp(1): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  CWalker.cpp
+e:\uad\6to\chemonky\createworlds\createworlds\cwalker.h(2): fatal error C1083: Cannot open include file: 'CVector2D.h': No such file or directory
+  CRoom.cpp
+e:\uad\6to\chemonky\createworlds\createworlds\croom.h(2): fatal error C1083: Cannot open include file: 'CVector2D.h': No such file or directory
+  CFloor.cpp
+e:\uad\6to\chemonky\createworlds\createworlds\cfloor.h(2): fatal error C1083: Cannot open include file: 'CVector2D.h': No such file or directory
+  CDijkstra.cpp
+e:\uad\6to\chemonky\createworlds\createworlds\cwalker.h(2): fatal error C1083: Cannot open include file: 'CVector2D.h': No such file or directory
+  Generating Code...

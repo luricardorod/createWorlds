@@ -1,0 +1,11 @@
+﻿  CRun.cpp
+e:\uad\6to\chemonky\createworlds\animationstatemachine\cstates.h(3): fatal error C1083: Cannot open include file: 'CUnits.h': No such file or directory
+  CIdle.cpp
+e:\uad\6to\chemonky\createworlds\animationstatemachine\cstates.h(3): fatal error C1083: Cannot open include file: 'CUnits.h': No such file or directory
+  CFSM.cpp
+e:\uad\6to\chemonky\createworlds\animationstatemachine\cstates.h(3): fatal error C1083: Cannot open include file: 'CUnits.h': No such file or directory
+  CDead.cpp
+e:\uad\6to\chemonky\createworlds\animationstatemachine\cstates.h(3): fatal error C1083: Cannot open include file: 'CUnits.h': No such file or directory
+  CAttack.cpp
+e:\uad\6to\chemonky\createworlds\animationstatemachine\cstates.h(3): fatal error C1083: Cannot open include file: 'CUnits.h': No such file or directory
+  Generating Code...
