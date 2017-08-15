@@ -6,6 +6,8 @@
 #include <fstream>
 #include <iterator> 
 #include<vector>
+
+
 int gmLoadAndExecuteScript(gmMachine &a_machine)
 {
 	std::vector<std::string> scripts;
@@ -38,40 +40,29 @@ void handleErrors(gmMachine &a_machine)
 	}
 }
 using namespace std;
+int GM_CDECL gm_myMultiply(gmThread *a_thread)
+{
+	GM_CHECK_NUM_PARAMS(2);
+	GM_CHECK_INT_PARAM(a_x, 0);
+	GM_CHECK_INT_PARAM(a_y, 1);
+
+	int ret = a_x * a_y;
+
+	a_thread->PushInt(ret);
+
+	return GM_OK;
+}
+
 int main() {
 
 	// Create gm virtual machine
 	gmMachine	gm;
-	gmVariable var(gm.AllocStringObject("Hello, World"));
 
-	switch (var.m_type)
+	static gmFunctionEntry lib[] =
 	{
-	case GM_NULL:
-		cout << "Variable is NULL type" << endl;
-		break;
-	case GM_INT:
-		cout << "Variable is INT type" << endl;
-		cout << "Value:" << var.m_value.m_int << endl;
-		break;
-	case GM_FLOAT:
-		cout << "Variable is FLOAT type" << endl;
-		cout << "Value:" << var.m_value.m_float << endl;
-		break;
-	case GM_STRING:
-		cout << "Variable is STRING type" << endl;
-		break;
-	case GM_TABLE:
-		cout << "Variable is TABLE type" << endl;
-		break;
-	case GM_FUNCTION:
-		cout << "Variable is FUNCTION type" << endl;
-		break;
-	default:
-		cout << "Variable is USER type" << endl;
-		// retrieve native pointer from user object
-
+		{ "MUL", gm_myMultiply }		// type name, entry point
 	};
-
+	gm.RegisterLibrary(lib, sizeof(lib)	/sizeof(lib[0]));
 	int ret = gmLoadAndExecuteScript(gm);
 	if (ret != 0)
 	{
@@ -79,7 +70,6 @@ int main() {
 		handleErrors(gm);
 		return 1;
 	}
-	gm.Execute(0);
 
 	gmCall  call;
 	if (call.BeginGlobalFunction(&gm, "init"))

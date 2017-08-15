@@ -13,7 +13,6 @@ void CFSM::SetState(CUnits *unit, int state)
 	m_States[unit->m_State]->OnExit(unit);
 	unit->m_State = state;
 	m_States[unit->m_State]->OnEnter(unit);
-
 }
 
 void CFSM::Update(float deltaTime)
