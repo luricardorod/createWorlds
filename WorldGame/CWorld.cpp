@@ -2,6 +2,7 @@
 #include <time.h>
 void CWorld::Init()
 {
+
 }
 
 void CWorld::Destroy()

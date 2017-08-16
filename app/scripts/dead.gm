@@ -1,0 +1,17 @@
+global dead_Update = function()
+{
+  print("deadUpdate");
+  return states["STATEIDLE"];
+};
+
+global dead_OnEnter = function()
+{
+  unit["m_bSelectable"] = 0;
+  unit["m_speed"] = 0;
+  print("dead_OnEnter");
+};
+
+global dead_OnExit = function()
+{
+  print("dead_OnExit");
+};

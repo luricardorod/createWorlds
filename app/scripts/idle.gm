@@ -1,0 +1,19 @@
+global idle_Update = function( isBelic, enemyInVisionRange)
+{
+  if (isBelic && enemyInVisionRange) {
+    return states["STATEATTACK"];
+  }
+  print("idleUpdate");
+  return states["STATEIDLE"];
+};
+
+global idle_OnEnter = function()
+{
+  unit["m_speed"] = 0;
+  print("idle_OnEnter");
+};
+
+global idle_OnExit = function()
+{
+  print("idle_OnExit");
+};

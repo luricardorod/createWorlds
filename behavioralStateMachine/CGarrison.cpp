@@ -2,7 +2,7 @@
 
 
 
-int CGarrison::Update(std::shared_ptr<CUnits> unit, float deltaTime)
+int CGarrison::Update(CUnits* unit, float deltaTime)
 {
 	if (unit->m_UnitInteract && unit->m_Manager->GetType(unit->m_UnitInteract->m_iIdType)->m_bCanGarrison)
 	{
@@ -27,7 +27,7 @@ void CGarrison::OnEnter(CUnits *unit)
 void CGarrison::OnExit(CUnits *unit)
 {
 	for (auto it = unit->m_UnitInteract->m_vListaGarrison->begin(); it != unit->m_UnitInteract->m_vListaGarrison->end(); it++) {
-		if (it->get() == unit)
+		if ((*it) == unit)
 		{
 			unit->m_UnitInteract->m_vListaGarrison->erase(it);
 		}

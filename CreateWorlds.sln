@@ -5,16 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CreateWorlds", "CreateWorlds\CreateWorlds.vcxproj", "{6B083B50-21E3-463F-B0A4-3E4461D38627}"
 	ProjectSection(ProjectDependencies) = postProject
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146} = {EA249C4D-0135-4480-9E4E-F2EC183FD146}
 		{290504F4-91C4-4E2A-9DF2-378EAAB43763} = {290504F4-91C4-4E2A-9DF2-378EAAB43763}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utils", "Utils\Utils.vcxproj", "{EA249C4D-0135-4480-9E4E-F2EC183FD146}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "behavioralStateMachine", "behavioralStateMachine\behavioralStateMachine.vcxproj", "{EADD5CF0-AB5A-464A-8F6A-D2CFB54B8F53}"
-	ProjectSection(ProjectDependencies) = postProject
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146} = {EA249C4D-0135-4480-9E4E-F2EC183FD146}
-	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WorldGame", "WorldGame\WorldGame.vcxproj", "{DE991910-55A5-474A-A14F-C58C3EBA7E7F}"
 EndProject
@@ -25,6 +19,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConverteAnimations", "ConverteAnimations\ConverteAnimations.vcxproj", "{4DAA9D78-B830-4F77-8E47-64768C5ACC70}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app", "app\app.vcxproj", "{4C63B915-71EF-4CEE-906B-1EB0B3D54A9C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utils", "Utils\Utils.vcxproj", "{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,14 +38,6 @@ Global
 		{6B083B50-21E3-463F-B0A4-3E4461D38627}.Release|x64.Build.0 = Release|x64
 		{6B083B50-21E3-463F-B0A4-3E4461D38627}.Release|x86.ActiveCfg = Release|Win32
 		{6B083B50-21E3-463F-B0A4-3E4461D38627}.Release|x86.Build.0 = Release|Win32
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146}.Debug|x64.ActiveCfg = Debug|x64
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146}.Debug|x64.Build.0 = Debug|x64
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146}.Debug|x86.ActiveCfg = Debug|Win32
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146}.Debug|x86.Build.0 = Debug|Win32
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146}.Release|x64.ActiveCfg = Release|x64
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146}.Release|x64.Build.0 = Release|x64
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146}.Release|x86.ActiveCfg = Release|Win32
-		{EA249C4D-0135-4480-9E4E-F2EC183FD146}.Release|x86.Build.0 = Release|Win32
 		{EADD5CF0-AB5A-464A-8F6A-D2CFB54B8F53}.Debug|x64.ActiveCfg = Debug|x64
 		{EADD5CF0-AB5A-464A-8F6A-D2CFB54B8F53}.Debug|x64.Build.0 = Debug|x64
 		{EADD5CF0-AB5A-464A-8F6A-D2CFB54B8F53}.Debug|x86.ActiveCfg = Debug|Win32
@@ -98,6 +86,14 @@ Global
 		{4C63B915-71EF-4CEE-906B-1EB0B3D54A9C}.Release|x64.Build.0 = Release|x64
 		{4C63B915-71EF-4CEE-906B-1EB0B3D54A9C}.Release|x86.ActiveCfg = Release|Win32
 		{4C63B915-71EF-4CEE-906B-1EB0B3D54A9C}.Release|x86.Build.0 = Release|Win32
+		{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}.Debug|x64.ActiveCfg = Debug|x64
+		{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}.Debug|x64.Build.0 = Debug|x64
+		{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}.Debug|x86.ActiveCfg = Debug|Win32
+		{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}.Debug|x86.Build.0 = Debug|Win32
+		{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}.Release|x64.ActiveCfg = Release|x64
+		{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}.Release|x64.Build.0 = Release|x64
+		{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}.Release|x86.ActiveCfg = Release|Win32
+		{ECDAC7F2-A1DC-4C22-B525-1322FAE4B860}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

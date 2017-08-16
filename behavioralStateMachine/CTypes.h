@@ -17,6 +17,9 @@ public:
 	float m_fMaxSpeed;
 	float m_fMaxHP;
 	float m_fConstructionTime;
+	float m_MinRange;
+	float m_MaxRange;
+	float m_ReloadTime;
 	float m_fRotingTime;
 	float m_fConstructionTypes;
 	std::vector<std::shared_ptr<int>> m_viWeapons;

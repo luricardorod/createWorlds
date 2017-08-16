@@ -2,7 +2,7 @@
 
 
 
-int CRecollect::Update(std::shared_ptr<CUnits> unit, float deltaTime)
+int CRecollect::Update(CUnits* unit, float deltaTime)
 {
 	return 0;
 }

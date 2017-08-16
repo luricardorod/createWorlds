@@ -24,20 +24,17 @@ unsigned short CUnits::GetClassId()
 	return CLASSUNIT;
 }
 
+
 bool CUnits::EnemyInVisionRange()
 {
-	for (auto &gameObject : m_World->m_pGameObjects) {
-		if (gameObject->GetClassId() == CLASSUNIT)
+	for (auto &unit : (*allUnits)) {
+		if (m_iIdFaction != unit.m_iIdFaction)
 		{
-			CUnits* tempUnit = std::dynamic_pointer_cast<CUnits>(gameObject).get();
-			if (IsAnEnemyFaction(tempUnit->m_iIdFaction))
+			float distance = (unit.GetPosition() - GetPosition()).Magnitude();
+			if (distance < m_Manager->GetType(m_iIdType)->m_fVisionRange)
 			{
-				float distance = (tempUnit->GetPosition() - GetPosition()).Magnitude();
-				if (distance < m_Manager->GetType(m_iIdType)->m_fVisionRange)
-				{
-					m_UnitInteract = tempUnit;
-					return true;
-				}
+				m_UnitInteract = &unit;
+				return true;
 			}
 		}
 	}

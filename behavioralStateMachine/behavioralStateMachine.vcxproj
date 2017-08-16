@@ -78,7 +78,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)WorldGame;$(SolutionDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)WorldGame;$(SolutionDir)Librerias\gm\include;$(SolutionDir)Utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -141,11 +141,13 @@
     <ClCompile Include="CFaction.cpp" />
     <ClCompile Include="CFSM.cpp" />
     <ClCompile Include="CGarrison.cpp" />
+    <ClCompile Include="CHeavyType.cpp" />
     <ClCompile Include="CIdle.cpp" />
     <ClCompile Include="CManager.cpp" />
     <ClCompile Include="CMoveTo.cpp" />
     <ClCompile Include="CRecollect.cpp" />
     <ClCompile Include="CRoting.cpp" />
+    <ClCompile Include="CStates.cpp" />
     <ClCompile Include="CTypes.cpp" />
     <ClCompile Include="CUnits.cpp" />
     <ClCompile Include="CWeaponType.cpp" />
@@ -157,6 +159,7 @@
     <ClInclude Include="CFaction.h" />
     <ClInclude Include="CFSM.h" />
     <ClInclude Include="CGarrison.h" />
+    <ClInclude Include="CHeavyType.h" />
     <ClInclude Include="CIdle.h" />
     <ClInclude Include="CManager.h" />
     <ClInclude Include="CMoveTo.h" />

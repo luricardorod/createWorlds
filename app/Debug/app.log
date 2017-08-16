@@ -1,4 +1,2 @@
-﻿  main.cpp
-c:\users\bluemonkey\desktop\createworlds\app\main.cpp(18): warning C4018: '<': signed/unsigned mismatch
-  app.vcxproj -> C:\Users\blueMonkey\Desktop\createWorlds\Debug\app.exe
-  app.vcxproj -> C:\Users\blueMonkey\Desktop\createWorlds\Debug\app.pdb (Full PDB)
+﻿  app.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\app.exe
+  app.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\app.pdb (Full PDB)

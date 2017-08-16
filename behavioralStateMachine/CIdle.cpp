@@ -1,26 +1,57 @@
 #include "CIdle.h"
 
 
-int CIdle::Update(std::shared_ptr<CUnits> unit, float deltaTime)
+int CIdle::Update(CUnits* unit, float deltaTime)
 {
-	CTypes *tempType = unit->m_Manager->GetType(unit->m_iIdType);
-	
-	if (unit->IsBelic())
+	gmCall  call;
+	if (call.BeginGlobalFunction(gm, "idle_Update"))
 	{
-		if (unit->EnemyInVisionRange())
+		call.AddParamInt(unit->m_Manager->m_aTypes[unit->m_iIdType]->m_bIsBelic);
+		call.AddParamInt(unit->EnemyInVisionRange());
+
+		call.End();
+		int myReturn = 0;
+		if (call.GetReturnedInt(myReturn))
 		{
-			return STATEATTACK;
+			return myReturn;
+		}
+		else
+		{
+			std::cout << "idle_Update returned an incorrect value" << std::endl;
 		}
 	}
-	return COUNTSTATES;
+	else
+	{
+		std::cout << "error idle_Update" << std::endl;
+	}
+
+	return STATEIDLE;
 }
 
 void CIdle::OnEnter(CUnits *unit)
 {
+	gmCall  call;
+	if (call.BeginGlobalFunction(gm, "idle_OnEnter"))
+	{
+		call.End();
+	}
+	else
+	{
+		std::cout << "error idle_OnEnter" << std::endl;
+	}
 }
 
 void CIdle::OnExit(CUnits *unit)
 {
+	gmCall  call;
+	if (call.BeginGlobalFunction(gm, "idle_OnExit"))
+	{
+		call.End();
+	}
+	else
+	{
+		std::cout << "error idle_OnExit" << std::endl;
+	}
 }
 
 CIdle::CIdle()

@@ -4,8 +4,7 @@
 
 AppWizard has created this Utils library project for you.
 
-This file contains a summary of what you will find in each of the files that
-make up your Utils application.
+No source files were created as part of your project.
 
 
 Utils.vcxproj
@@ -20,13 +19,6 @@ Utils.vcxproj.filters
     and the filters. This association is used in the IDE to show grouping of files with
     similar extensions under a specific node (for e.g. ".cpp" files are associated with the
     "Source Files" filter).
-
-
-/////////////////////////////////////////////////////////////////////////////
-
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named Utils.pch and a precompiled types file named StdAfx.obj.
 
 /////////////////////////////////////////////////////////////////////////////
 Other notes:

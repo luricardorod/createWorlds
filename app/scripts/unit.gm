@@ -1,32 +1,79 @@
-/*heavyUnit = table( 
-	m_iIdFaction,
-	m_v2Direction [2],
-	m_fHp,
-	m_iGroupId,
-	m_bSelectable,
-	m_vQueueConstruction [10],
-	m_vListaGarrison [10],
-	m_fReloadTime,
-	m_fRotingTimer,
-	m_fConstructionTimer,
-	m_v2Coordinates [2], 
-	function = ent_state_init;
-);*/
-
-global ent_state_init = function(func)
+global unit = table(
+	m_speed = 0,
+	m_v2Directionx = 0,
+	m_v2Directiony = 0,
+	m_fHp = 0,
+	m_bSelectable = 0,
+	m_fReloadTime = 0,
+	m_fRotingTimer = 0,
+	m_fConstructionTimer = 0,
+	m_v2Coordinatesx = 0,
+	m_v2Coordinatesy = 0,
+	m_positionx = 0,
+	m_positiony = 0
+);
+global set_unit = function(m_speed, m_v2Directionx, m_v2Directiony, m_fHp, m_bSelectable,
+ 	m_fReloadTime, m_fRotingTimer, m_fConstructionTimer, m_v2Coordinatesx, m_v2Coordinatesy,
+	m_positionx, m_positiony)
 {
-  print( .name, " state initialised");
-  this:stateSet(func);
+	unit["m_speed"] = m_speed;
+	unit["m_v2Directionx"] = m_v2Directionx;
+	unit["m_v2Directiony"] = m_v2Directiony;
+	unit["m_fHp"] = m_fHp;
+	unit["m_bSelectable"] = m_bSelectable;
+	unit["m_fReloadTime"] = m_fReloadTime;
+	unit["m_fRotingTimer"] = m_fRotingTimer;
+	unit["m_fConstructionTimer"] = m_fConstructionTimer;
+	unit["m_v2Coordinatesx"] = m_v2Coordinatesx;
+	unit["m_v2Coordinatesy"] = m_v2Coordinatesy;
+	unit["m_positionx"] = m_positionx;
+	unit["m_positiony"] = m_positiony;
 };
-
-global state_dead = function()
+global set_m_positionx = function()
 {
-  this.m_bSelectable = false;
-  stateSet( state_root );
+	return unit["m_positionx"];
 };
-
-global state_root = function()
+global set_m_positiony = function()
 {
-  this.m_bSelectable = false;
-  stateSet( state_root );
+	return unit["m_positiony"];
+};
+global set_m_speed = function()
+{
+	return unit["m_speed"];
+};
+global set_m_v2Directionx = function()
+{
+	return unit["m_v2Directionx"];
+};
+global set_m_v2Directiony = function()
+{
+	return unit["m_v2Directiony"];
+};
+global set_m_fHp = function()
+{
+	return unit["m_fHp"];
+};
+global set_m_bSelectable = function()
+{
+	return unit["m_bSelectable"];
+};
+global set_m_fReloadTime = function()
+{
+	return unit["m_fReloadTime"];
+};
+global set_m_fRotingTimer = function()
+{
+	return unit["m_fRotingTimer"];
+};
+global set_m_fConstructionTimer = function()
+{
+	return unit["m_fConstructionTimer"];
+};
+global set_m_v2Coordinatesx = function()
+{
+	return unit["m_v2Coordinatesx"];
+};
+global set_m_v2Coordinatesy = function()
+{
+	return unit["m_v2Coordinatesy"];
 };

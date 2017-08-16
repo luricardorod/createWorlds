@@ -1,0 +1,36 @@
+global attack_Update = function(enemyx, enemyy, maxRange, minRange, reloadTime, reloadTimer)
+{
+  print("attackUpdate");
+  disx = enemyx - unit["m_positionx"];
+  disy = enemyy - unit["m_positiony"];
+  distance = disx * disx + disy * disy;
+  if (distance <= maxRange && distance >= minRange){
+    unit["m_speed"] = 0;
+    if(reloadTimer =< 0){
+      unit["m_fReloadTime"] = reloadTime;
+    }
+  }
+  else if (distance <= maxRange)
+  {
+    unit["m_speed"] = 1;
+    unit["m_v2Directionx"] = disx;
+    unit["m_v2Directiony"] = disy;
+  }
+  else if (distance >= minRange)
+  {
+    unit["m_speed"] = 1;
+    unit["m_v2Directionx"] = -disx;
+    unit["m_v2Directiony"] = -disy;
+  }
+  return states["STATEATTACK"];
+};
+
+global attack_OnEnter = function()
+{
+  print("attack_OnEnter");
+};
+
+global attack_OnExit = function()
+{
+  print("attack_OnExit");
+};

@@ -1,0 +1,24 @@
+global parameters = table(
+	ARRIVALMARGINERROR = 2;
+);
+global states = table(
+	STATEIDLE = 0,
+	STATEMOVETO = 0,
+	STATEATTACK = 0,
+	STATEDEAD = 0,
+	STATEBUILD = 0,
+	STATEROTING = 0,
+	STATERECOLLECT = 0,
+	STATEGARRISON = 0
+);
+
+global setStates = function (idle, moveto, attack, dead, recolect, roting, build, garrison){
+	states["STATEIDLE"] = idle;
+	states["STATEMOVETO"] = moveto;
+	states["STATEATTACK"] = attack;
+	states["STATEDEAD"] = dead;
+	states["STATEBUILD"] = build;
+	states["STATEROTING"] = roting;
+	states["STATERECOLLECT"] = collect;
+	states["STATEGARRISON"] = garrison;
+};

@@ -1,0 +1,21 @@
+global move_Update = function()
+{
+  unit["m_v2Directionx"] = unit["m_v2Coordinatesx"] - unit["m_positionx"];
+  unit["m_v2Directiony"] = unit["m_v2Coordinatesy"] - unit["m_positiony"];
+  distance = unit["m_v2Directionx"]*unit["m_v2Directionx"] + unit["m_v2Directiony"] * unit["m_v2Directiony"];
+  if (distance < parameters["ARRIVALMARGINERROR"]){
+    return states["STATEIDLE"];
+  }
+  return states["STATEATTACK"];
+};
+
+global move_OnEnter = function()
+{
+  unit["m_speed"] = 1;
+  print("move_OnEnter");
+};
+
+global move_OnExit = function()
+{
+  print("move_OnExit");
+};

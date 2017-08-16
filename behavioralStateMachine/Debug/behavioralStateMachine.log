@@ -1,13 +1,4 @@
-﻿  CWeaponType.cpp
-  CUnits.cpp
-e:\uad\6to\chemonky\createworlds\behavioralstatemachine\cunits.cpp(59): warning C4018: '<': signed/unsigned mismatch
-  CTypes.cpp
-  CRoting.cpp
-  CRecollect.cpp
-  CMoveTo.cpp
-  CManager.cpp
-  CIdle.cpp
-  CGarrison.cpp
+﻿  CHeavyType.cpp
   CFSM.cpp
 e:\uad\6to\chemonky\createworlds\behavioralstatemachine\cfsm.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 e:\uad\6to\chemonky\createworlds\behavioralstatemachine\cfsm.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
@@ -17,9 +8,21 @@ e:\uad\6to\chemonky\createworlds\behavioralstatemachine\cfsm.cpp(6): warning C40
 e:\uad\6to\chemonky\createworlds\behavioralstatemachine\cfsm.cpp(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 e:\uad\6to\chemonky\createworlds\behavioralstatemachine\cfsm.cpp(8): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 e:\uad\6to\chemonky\createworlds\behavioralstatemachine\cfsm.cpp(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  CFaction.cpp
-  CDead.cpp
-  CBuild.cpp
+e:\uad\6to\chemonky\createworlds\behavioralstatemachine\cfsm.cpp(50): warning C4018: '<': signed/unsigned mismatch
   CAttack.cpp
   Generating Code...
+  Compiling...
+  CTypes.cpp
+  CRoting.cpp
+  CManager.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  CUnits.cpp
+  CStates.cpp
+  CRecollect.cpp
+  CMoveTo.cpp
+  CIdle.cpp
+  CGarrison.cpp
+  CDead.cpp
+  CBuild.cpp
   behavioralStateMachine.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\behavioralStateMachine.lib

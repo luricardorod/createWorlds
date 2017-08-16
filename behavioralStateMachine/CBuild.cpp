@@ -1,6 +1,6 @@
 #include "CBuild.h"
 
-int CBuild::Update(std::shared_ptr<CUnits> unit, float deltaTime)
+int CBuild::Update(CUnits* unit, float deltaTime)
 {
 	return 0;
 }

@@ -1,4 +1,4 @@
-print(MUL(2,2));
+print(MUL(3,2));
 global my_entity = {
 		x = 50, y = 100, name = "test"
 	};
