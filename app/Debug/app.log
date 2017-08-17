@@ -1,2 +1,24 @@
-﻿  app.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\app.exe
-  app.vcxproj -> E:\UAD\6to\Chemonky\createWorlds\Debug\app.pdb (Full PDB)
+﻿gmBuild.lib(gmByteCodeGen.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmByteCodeGen.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmCodeGen.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmCodeGen.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmCodeTree.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmCodeTree.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmCrc.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmCrc.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmFunctionObject.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmFunctionObject.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmIncGC.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmIncGC.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmLibHooks.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmLibHooks.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmLog.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmLog.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmMachine.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmMachine.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmMachineLib.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmMachineLib.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmMemChain.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmMemChain.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmMemFixedSet.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmMemFixedSet.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmOperators.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmOperators.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmparser.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmparser.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmScanner.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmScanner.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmStreamBuffer.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmStreamBuffer.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmStringObject.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmStringObject.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmTableObject.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmTableObject.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmThread.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmThread.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmUserObject.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmUserObject.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmUtil.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmUtil.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+gmBuild.lib(gmVariable.obj) : warning LNK4099: PDB 'gmBuild.pdb' was not found with 'gmBuild.lib(gmVariable.obj)' or at 'C:\Users\blueMonkey\Desktop\createWorlds\Debug\gmBuild.pdb'; linking object as if no debug info
+  app.vcxproj -> C:\Users\blueMonkey\Desktop\createWorlds\Debug\app.exe
+  app.vcxproj -> C:\Users\blueMonkey\Desktop\createWorlds\Debug\app.pdb (Full PDB)

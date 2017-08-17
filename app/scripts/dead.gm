@@ -1,7 +1,7 @@
 global dead_Update = function()
 {
   print("deadUpdate");
-  return states["STATEIDLE"];
+  return states["STATEATTACK"];
 };
 
 global dead_OnEnter = function()

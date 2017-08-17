@@ -40,8 +40,8 @@ int gmLoadAndExecuteScript(gmMachine &a_machine)
 
 	//scripts.push_back("scripts/helloWorld.gm");
 	scripts.push_back("scripts/unit.gm");
-	scripts.push_back("scripts/global.gm");
 	scripts.push_back("scripts/attack.gm");
+	scripts.push_back("scripts/global.gm");
 	scripts.push_back("scripts/dead.gm");
 	scripts.push_back("scripts/move.gm");
 	scripts.push_back("scripts/idle.gm");
@@ -209,9 +209,10 @@ void CFSM::Init()
 		(*state)->gm = &gm;
 	}
 	CUnits one;
-	one.m_State = STATEATTACK;
+	one.m_State = STATEIDLE;
 	one.m_Manager = &manager;
 	one.m_bSelectable = 1;
+	one.SetPosition(CVector2D(0, 0));
 	m_pUnits.push_back(one);
 	m_pUnits.back().allUnits = &m_pUnits;
 }

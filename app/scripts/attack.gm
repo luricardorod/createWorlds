@@ -6,7 +6,7 @@ global attack_Update = function(enemyx, enemyy, maxRange, minRange, reloadTime, 
   distance = disx * disx + disy * disy;
   if (distance <= maxRange && distance >= minRange){
     unit["m_speed"] = 0;
-    if(reloadTimer =< 0){
+    if(reloadTimer <= 0){
       unit["m_fReloadTime"] = reloadTime;
     }
   }
@@ -22,7 +22,7 @@ global attack_Update = function(enemyx, enemyy, maxRange, minRange, reloadTime, 
     unit["m_v2Directionx"] = -disx;
     unit["m_v2Directiony"] = -disy;
   }
-  return states["STATEATTACK"];
+  return states["STATEIDLE"];
 };
 
 global attack_OnEnter = function()

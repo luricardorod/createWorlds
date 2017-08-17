@@ -9,9 +9,15 @@ int CAttack::Update(CUnits* unit, float deltaTime)
 		{
 			unit->m_fReloadTime -= deltaTime;
 		}
-
-		call.AddParamFloat(unit->m_UnitInteract->GetPosition().x);
-		call.AddParamFloat(unit->m_UnitInteract->GetPosition().y);
+		if (unit->m_UnitInteract)
+		{
+			call.AddParamFloat(unit->m_UnitInteract->GetPosition().x);
+			call.AddParamFloat(unit->m_UnitInteract->GetPosition().y);
+		}
+		else {
+			call.AddParamFloat(0);
+			call.AddParamFloat(0);
+		}
 		call.AddParamFloat(unit->m_Manager->m_aTypes[unit->m_iIdType]->m_MaxRange);
 		call.AddParamFloat(unit->m_Manager->m_aTypes[unit->m_iIdType]->m_MinRange);
 		call.AddParamFloat(unit->m_Manager->m_aTypes[unit->m_iIdType]->m_ReloadTime);

@@ -4,7 +4,7 @@ global idle_Update = function( isBelic, enemyInVisionRange)
     return states["STATEATTACK"];
   }
   print("idleUpdate");
-  return states["STATEIDLE"];
+  return states["STATEDEAD"];
 };
 
 global idle_OnEnter = function()

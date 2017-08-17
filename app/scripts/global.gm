@@ -1,5 +1,5 @@
 global parameters = table(
-	ARRIVALMARGINERROR = 2;
+	ARRIVALMARGINERROR = 2
 );
 global states = table(
 	STATEIDLE = 0,
